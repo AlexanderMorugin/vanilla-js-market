@@ -19,7 +19,7 @@ function showProducts(arr, el) {
   product = document.querySelector(el).innerHTML = arr
     .map(
       (item) =>
-        `<li key='${item.id}' class="shelf__item"><img id='${item.id}' src='assets/images/${item.image}.svg'></li>`
+        `<li key='${item.id}' class="list__item"><img id='${item.id}' src='assets/images/${item.image}.svg'></li>`
     )
     .join('');
 }
@@ -31,12 +31,12 @@ function showButton(item) {
   }
 }
 
-showProducts(products.slice(0, 4), '#shelf-top');
-showProducts(products.slice(4, 7), '#shelf-middle');
-showProducts(products.slice(7, 11), '#shelf-bottom');
+showProducts(products.slice(0, 4), '#list-top');
+showProducts(products.slice(4, 7), '#list-middle');
+showProducts(products.slice(7, 11), '#list-bottom');
 
 // Drag and Drop
-let shelfItems = document.querySelectorAll('.shelf__item');
+let shelfItems = document.querySelectorAll('.list__item');
 let cart = document.querySelector('.cart');
 
 for (item of shelfItems) {
@@ -44,7 +44,7 @@ for (item of shelfItems) {
     e.dataTransfer.setData('data', e.target.id);
 
     let dragged = e.target;
-    dragged.classList.add('shelf__item_dragged');
+    dragged.classList.add('list__item_dragged');
 
     // перемещение над корзиной
     cart.addEventListener('dragover', (e) => {
@@ -55,7 +55,7 @@ for (item of shelfItems) {
     cart.addEventListener('drop', (e) => {
       e.preventDefault();
 
-      dragged.classList.remove('shelf__item_dragged');
+      dragged.classList.remove('list__item_dragged');
       e.target.appendChild(dragged);
 
       count.push(Number(dragged.id));

@@ -1,0 +1,8 @@
+.shelf-cover {
+  border-bottom: 10px solid #f39c12;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  height: 0;
+  width: 100%;
+  padding-bottom: 5px;
+}

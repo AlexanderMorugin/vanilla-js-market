@@ -1,23 +1,106 @@
 @import url(../blocks/page/page.css);
-@import url(../blocks/content/content.css);
-@import url(../blocks/shelf/shelf.css);
-@import url(../blocks/shelf/__item/shelf__item.css);
-@import url(../blocks/shelf/__item/_dragged/shelf__item_dragged.css);
+@import url(../blocks/header/header.css);
+/* @import url(../blocks/content/content.css); */
+/* @import url(../blocks/shelf-top/shelf-top.css);
+@import url(../blocks/shelf-top/__header/shelf-top__header.css);
+@import url(../blocks/shelf-top/__umbrella/shelf-top__umbrella.css);
+@import url(../blocks/shelf-top/__item/shelf-top__item.css);
+
+@import url(../blocks/shelf-top/__back/shelf-top__back.css); */
+
+/* @import url(../blocks/shelf-base/shelf-base.css);
+@import url(../blocks/shelf-cover/shelf-cover.css); */
+
+/* @import url(../blocks/list/list.css);
+@import url(../blocks/list/__item/list__item.css);
+@import url(../blocks/list/__item/_dragged/list__item_dragged.css); */
+
 @import url(../blocks/cart/cart.css);
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_visible/button_visible.css);
 
-
-* {  
+* {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
+.shelf-top {
+  position: relative;
+  /* height: 204px; */
+}
 
+.umbrella {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  display: flex;
+  width: 100%;
+  min-height: 30px;
+  /* justify-content: space-between; */
+  /* z-index: 15; */
+}
 
+.umbrella__item {
+  width: 100%;
+  min-height: 30px;
+  background: #f1c40f;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
 
+.umbrella__item:nth-child(even) {
+  background: #c0392b;
+}
 
+.shelf-top__header {
+  background: #e67e22;
+  min-height: 12px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.back {
+  background: #34495e;
+  border-left: 7px solid #edf6ff;
+  border-right: 7px solid #edf6ff;
+  height: 100px;
+}
+
+.shelf-cover {
+  border-bottom: 10px solid #f39c12;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  height: 0;
+  width: 100%;
+}
+
+.shelf-base {
+  position: relative;
+  background: #f1c40f;
+  min-height: 8px;
+}
+
+.list {
+  position: absolute;
+  bottom: 8px;
+  left: 2px;
+  right: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  /* gap: 2px; */
+  width: 100%;
+}
+
+.list__item {
+  cursor: grab;
+}
+
+.list__item_dragged {
+  transform: scale(1.5);
+}

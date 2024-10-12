@@ -1,0 +1,8 @@
+.shelf-top__back {
+
+  background: #34495E;
+  border-left: 7px solid #edf6ff;
+  border-right: 7px solid #edf6ff;
+  height: 100px;
+  /* z-index: 2; */
+}

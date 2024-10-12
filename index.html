@@ -6,37 +6,56 @@
     <meta name="description" content="Яндекс Крауд. Магазин" />
     <meta name="author" content="Александр Моругин" />
     <meta name="keywords" content="html, css, javascript" />
+    <link rel="icon" href="./assets/images/img-jam.svg" />
     <title>Яндекс Крауд. Магазин</title>
     <link rel="stylesheet" type="text/css" href="./pages/index.css" />
   </head>
   <body class="page">
+    <header class="header">
+      <h1>Перетащите продукты с полок в корзину</h1>
+    </header>
     <main class="content">
-      <section>
-        <ul id="shelf-top" class="shelf">
-          <!-- Здесь будут вставляться продукты -->
+      <section class="shelf-top">
+        <ul class="umbrella">
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
+          <li class="umbrella__item"></li>
         </ul>
-      </section>
 
-      <section>
-        <ul id="shelf-middle" class="shelf">
-          <!-- Здесь будут вставляться продукты -->
-        </ul>
-      </section>
+        <div class="shelf-top__header"></div>
 
-      <section>
-        <ul id="shelf-bottom" class="shelf">
-          <!-- Здесь будут вставляться продукты -->
-        </ul>
-      </section>
+        <div class="back"></div>
 
-      <section class="bottom">
-        <div class="cart">
-          <a href="https://lavka.yandex.ru/" target="_blank" class="button"
-            >Оплатить корзину</a
-          >
+        <div class="shelf-cover"></div>
+        <div class="shelf-base">
+          <ul id="list-top" class="list">
+            <!-- Здесь будут вставляться продукты -->
+          </ul>
         </div>
       </section>
+
+      <section class="shelf-middle">
+        <ul id="list-middle" class="list">
+      <!-- Здесь будут вставляться продукты -->
+      </ul>
+      </section>
+
+      <section class="shelf-bottom">
+        <ul id="list-bottom" class="shelf">
+      <!-- Здесь будут вставляться продукты -->
+      </ul>
+      </section>
     </main>
+    <div class="cart">
+      <a href="https://lavka.yandex.ru/" target="_blank" class="button"
+        >Оплатить корзину</a
+      >
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
