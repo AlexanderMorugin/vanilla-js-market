@@ -1,0 +1,23 @@
+@import url(../blocks/page/page.css);
+@import url(../blocks/content/content.css);
+@import url(../blocks/shelf/shelf.css);
+@import url(../blocks/shelf/__item/shelf__item.css);
+@import url(../blocks/shelf/__item/_dragged/shelf__item_dragged.css);
+@import url(../blocks/cart/cart.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/_visible/button_visible.css);
+
+
+* {  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  outline: 1px solid red;
+}
+
+
+
+
+

@@ -1,0 +1,16 @@
+.page {
+  background: #edf6ff;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding-top: 28px; */
+
+  /*
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern";
+  */
+}
