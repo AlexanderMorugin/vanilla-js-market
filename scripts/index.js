@@ -14,6 +14,20 @@ const products = [
 
 let count = [];
 
+// Функция отрисовки козырька
+function showUmbrella() {
+  document.querySelector('.umbrella').innerHTML = new Array(27)
+    .fill().map((_, index) => `<li key={index} class="umbrella__item"></li>`)
+    .join('');
+}
+
+// Функция отрисовки тени козырька
+function showUmbrellaShadow() {
+  document.querySelector('.shadow').innerHTML = new Array(27)
+    .fill().map((_, index) => `<li key={index} class="shadow-item"></li>`)
+    .join('');
+}
+
 // Функция отрисовки продуктов
 function showProducts(arr, el) {
   product = document.querySelector(el).innerHTML = arr
@@ -65,3 +79,6 @@ for (item of shelfItems) {
     });
   });
 }
+
+showUmbrella();
+showUmbrellaShadow()
