@@ -16,8 +16,8 @@
 @import url(../blocks/list/__item/_dragged/list__item_dragged.css); */
 
 /* @import url(../blocks/cart/cart.css); */
-@import url(../blocks/button/button.css);
-@import url(../blocks/button/_visible/button_visible.css);
+/* @import url(../blocks/button/button.css);
+@import url(../blocks/button/_visible/button_visible.css); */
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -25,8 +25,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
 
-  /* outline: 1px solid red; */
+.content {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .shelf-top {
@@ -39,7 +42,6 @@
   top: 12px;
   left: 0;
   display: flex;
-  /* min-height: 30px; */
   overflow: hidden;
   z-index: 2;
 }
@@ -85,7 +87,6 @@
   top: 12px;
   left: 0;
   display: flex;
-  /* margin-right: 7px; */
 }
 
 .shadow-second {
@@ -95,7 +96,6 @@
   background: #1d2a36;
   width: 100%;
   height: 25px;
-  /* z-index: 2; */
 }
 
 .shadow-item {
@@ -143,7 +143,6 @@
   justify-content: space-evenly;
   align-items: flex-end;
   width: 100%;
-  /* z-index: 3; */
 }
 
 .list-bottom {
@@ -155,27 +154,58 @@
   justify-content: space-evenly;
   align-items: flex-end;
   width: 100%;
-  /* z-index: 3; */
 }
 
 .list__item {
+  animation: jump 2.3s infinite;
   cursor: grab;
   z-index: 3;
 }
 
+.list__item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.list__item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.list__item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.list__item:hover {
+  animation: rotate 1s;
+}
+
 .list__item_dragged {
-  transform: scale(1.5);
+  margin-top: -50px;
+  margin-left: -12px;
+  animation: scale 0.5s;
+  opacity: 1;
+}
+
+.list__item_dragged:first-child {
+  margin-top: -50px;
+  margin-left: 0;
+  animation: scale 0.5s;
 }
 
 .footer {
+  position: relative;
+}
+
+.back-footer {
   position: relative;
   background: #e67e22;
   border-left: 7px solid #edf6ff;
   border-right: 7px solid #edf6ff;
   height: 91px;
+  margin-left: 32px;
+  margin-right: 32px;
 }
 
-.footer__shadow {
+.back-footer__shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -187,23 +217,125 @@
 .cart {
   position: absolute;
   top: 4px;
-  left: 50px;
+  left: 40px;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   display: flex;
   align-items: flex-end;
-  width: 70%;
-  height: 170px;
-  border: 1px solid blue;
-  /* background: #e3e7e8; */
+  flex-wrap: wrap;
+  width: 180px;
+  height: 175px;
   z-index: 5;
 }
 
 .cart__image {
-  position: relative;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   z-index: 4;
 }
 
+.button {
+  position: absolute;
+  top: 156px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background: #fce000;
+  border-radius: 16px;
+  line-height: 17px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #21201f;
+  text-decoration: none;
+  padding: 12px 18px;
+  transition: 0.8s;
+  animation: transform 0.3s, glowing 1.3s infinite;
+  z-index: 5;
+}
 
+.button:hover {
+  background: #e81919;
+  color: #fff;
+}
+
+.button_visible {
+  display: flex;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px transparent;
+  }
+  50% {
+    box-shadow: 0 0 5px #e81919;
+  }
+  100% {
+    box-shadow: 0 0 5px transparent;
+  }
+}
+
+@keyframes transform {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(150%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}

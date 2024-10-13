@@ -15,16 +15,18 @@ const products = [
 let count = [];
 
 // Функция отрисовки козырька
-function showUmbrella() {
+function showUmbrella(currentClass) {
   document.querySelector('.umbrella').innerHTML = new Array(27)
-    .fill().map((_, index) => `<li key={index} class="umbrella__item"></li>`)
+    .fill()
+    .map((_, index) => `<li key={index} class="umbrella__item"></li>`)
     .join('');
 }
 
 // Функция отрисовки тени козырька
 function showUmbrellaShadow() {
   document.querySelector('.shadow').innerHTML = new Array(27)
-    .fill().map((_, index) => `<li key={index} class="shadow-item"></li>`)
+    .fill()
+    .map((_, index) => `<li key={index} class="shadow-item"></li>`)
     .join('');
 }
 
@@ -50,26 +52,26 @@ showProducts(products.slice(4, 7), '#list-middle');
 showProducts(products.slice(7, 11), '#list-bottom');
 
 // Drag and Drop
-let shelfItems = document.querySelectorAll('.list__item');
+let listItems = document.querySelectorAll('.list__item');
 let cart = document.querySelector('.cart');
 
-for (item of shelfItems) {
+for (item of listItems) {
   item.addEventListener('dragstart', function (e) {
     e.dataTransfer.setData('data', e.target.id);
 
     let dragged = e.target;
-    dragged.classList.add('list__item_dragged');
 
     // перемещение над корзиной
     cart.addEventListener('dragover', (e) => {
       e.preventDefault();
+      cart.classList.add('cart_active');
     });
 
     // оставление продукта в корзине
     cart.addEventListener('drop', (e) => {
       e.preventDefault();
 
-      dragged.classList.remove('list__item_dragged');
+      dragged.classList.add('list__item_dragged');
       e.target.appendChild(dragged);
 
       count.push(Number(dragged.id));
@@ -81,4 +83,4 @@ for (item of shelfItems) {
 }
 
 showUmbrella();
-showUmbrellaShadow()
+showUmbrellaShadow();
