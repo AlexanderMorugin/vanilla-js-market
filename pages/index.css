@@ -24,6 +24,7 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__cart/footer__cart.css);
 @import url(../blocks/footer/__image/footer__image.css);
+@import url(../blocks/footer/__image/_active/footer__image_active.css);
 @import url(../blocks/footer/__button/footer__button.css);
 @import url(../blocks/footer/__button/_visible/footer__button_visible.css);
 
@@ -34,3 +35,5 @@
   padding: 0;
   list-style: none;
 }
+
+

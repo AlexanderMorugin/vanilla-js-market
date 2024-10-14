@@ -35,7 +35,9 @@ function showProducts(arr, el) {
 // Функция отрисовки кнопки
 function showButton(item) {
   if (item.length >= 3) {
-    document.querySelector('.footer__button').classList.add('footer__button_visible');
+    document
+      .querySelector('.footer__button')
+      .classList.add('footer__button_visible');
   }
 }
 
@@ -44,19 +46,21 @@ showProducts(products.slice(4, 7), '#list-middle');
 showProducts(products.slice(7, 11), '#list-bottom');
 
 // Drag and Drop
-let listItems = document.querySelectorAll('.list__item');
-let cart = document.querySelector('.footer__cart');
+const listItems = document.querySelectorAll('.list__item');
+const cart = document.querySelector('.footer__cart');
+const cartImage = document.querySelector('.footer__image');
 
 for (item of listItems) {
   item.addEventListener('dragstart', function (e) {
     e.dataTransfer.setData('data', e.target.id);
+    cartImage.classList.remove('footer__image_active');
 
     let dragged = e.target;
 
     // перемещение над корзиной
     cart.addEventListener('dragover', (e) => {
       e.preventDefault();
-      cart.classList.add('cart_active');
+      cartImage.classList.add('footer__image_active');
     });
 
     // оставление продукта в корзине
@@ -64,6 +68,7 @@ for (item of listItems) {
       e.preventDefault();
 
       dragged.classList.add('list__item_dragged');
+      cartImage.classList.remove('footer__image_active');
       e.target.appendChild(dragged);
 
       count.push(Number(dragged.id));
@@ -76,4 +81,3 @@ for (item of listItems) {
 
 showUmbrella('.umbrella', 'umbrella__item');
 showUmbrella('.back-side__shadow-umbrella', 'back-side__shadow-item');
-
