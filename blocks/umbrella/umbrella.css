@@ -1,0 +1,8 @@
+.umbrella {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  z-index: 2;
+}

@@ -1,0 +1,15 @@
+.footer__cart {
+  position: absolute;
+  top: 4px;
+  left: 40px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 180px;
+  min-height: 175px;
+  z-index: 5;
+}

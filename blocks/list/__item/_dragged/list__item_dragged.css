@@ -1,3 +1,23 @@
 .list__item_dragged {
-  transform: scale(1.5);
+  margin-top: -50px;
+  margin-left: -12px;
+  animation: scale 0.5s;
+  opacity: 1;
+}
+
+.list__item_dragged:first-child {
+  margin-top: -50px;
+  margin-left: 0;
+  animation: scale 0.5s;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

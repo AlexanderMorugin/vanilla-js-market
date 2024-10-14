@@ -11,23 +11,21 @@
     <link rel="stylesheet" type="text/css" href="./pages/index.css" />
   </head>
   <body class="page">
-    <!-- <header class="header">
-      <h1>Перетащите продукты с полок в корзину</h1>
-    </header> -->
-    <main class="content">
+    <header class="header">
+      <h1 class="header__title">Перетащите продукты с полок в корзину</h1>
+    </header>
+    <main class="main">
+      <!-- Верхняя полка -->
       <section class="shelf-top">
         <ul class="umbrella">
-          <!-- Козырек -->
+          <!-- Здесь будет отрисовываться козырек -->
         </ul>
-
-        <div class="shelf-top__header"></div>
-
-        <div class="back">
-          <ul class="shadow">
-            <!-- Тень козырька -->
+        <div class="shelf-top__cap"></div>
+        <div class="back-side back-side_shelf-top">
+          <ul class="back-side__shadow-umbrella">
+            <!-- Здесь будет отрисовываться тень козырька -->
           </ul>
         </div>
-
         <div class="shelf-cover"></div>
         <div class="shelf-base">
           <ul id="list-top" class="list">
@@ -36,11 +34,11 @@
         </div>
       </section>
 
-      <section class="shelf-middle">
-        <div class="back-second">
-          <div class="shadow-second"></div>
+      <!-- Средняя полка -->
+      <section>
+        <div class="back-side">
+          <div class="back-side__shadow"></div>
         </div>
-
         <div class="shelf-cover"></div>
         <div class="shelf-base">
           <ul id="list-middle" class="list">
@@ -49,29 +47,36 @@
         </div>
       </section>
 
-      <section class="shelf-bottom">
-        <div class="back-second">
-          <div class="shadow-second"></div>
+      <!-- Нижняя полка -->
+      <section>
+        <div class="back-side">
+          <div class="back-side__shadow"></div>
         </div>
-
-        <div class="shelf-cover-bottom"></div>
-        <div class="shelf-base-bottom">
-          <ul id="list-bottom" class="list-bottom">
+        <div class="shelf-cover shelf-cover_bottom"></div>
+        <div class="shelf-base shelf-base_bottom">
+          <ul id="list-bottom" class="list list_bottom">
             <!-- Здесь будут вставляться продукты -->
           </ul>
         </div>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="back-footer">
-        <div class="back-footer__shadow"></div>
+      <div class="back-side back-side_footer">
+        <div class="back-side__shadow back-side__shadow_footer"></div>
       </div>
 
-      <div class="cart"></div>
+      <!-- Область скидывания продуктов -->
+      <div class="footer__cart"></div>
 
-      <img src="./assets/images/img-cart.svg" alt="cart" class="cart__image" />
-      
-      <a href="https://lavka.yandex.ru/" target="_blank" class="button"
+      <img
+        src="./assets/images/img-cart.svg"
+        alt="cart"
+        class="footer__image"
+      />
+
+      <!-- Всплывающая кнопка -->
+      <a href="https://lavka.yandex.ru/" target="_blank" class="footer__button"
         >Оплатить корзину</a
       >
     </footer>

@@ -1,4 +1,5 @@
 .shelf-base {
+  position: relative;
   background: #f1c40f;
   min-height: 8px;
 }

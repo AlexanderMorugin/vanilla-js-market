@@ -1,0 +1,10 @@
+.footer__image {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 4;
+}

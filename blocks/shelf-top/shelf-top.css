@@ -1,4 +1,4 @@
 .shelf-top {
-  /* position: relative; */
-  /* height: 204px; */
+  position: relative;
+  overflow: hidden;
 }

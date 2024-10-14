@@ -1,0 +1,7 @@
+.back-side__shadow-item {
+  width: 27px;
+  min-height: 30px;
+  background: #1d2a36;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}

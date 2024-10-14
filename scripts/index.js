@@ -14,19 +14,11 @@ const products = [
 
 let count = [];
 
-// Функция отрисовки козырька
-function showUmbrella(currentClass) {
-  document.querySelector('.umbrella').innerHTML = new Array(27)
+// Функция отрисовки козырька и его тени
+function showUmbrella(currentClass, className) {
+  document.querySelector(currentClass).innerHTML = new Array(27)
     .fill()
-    .map((_, index) => `<li key={index} class="umbrella__item"></li>`)
-    .join('');
-}
-
-// Функция отрисовки тени козырька
-function showUmbrellaShadow() {
-  document.querySelector('.shadow').innerHTML = new Array(27)
-    .fill()
-    .map((_, index) => `<li key={index} class="shadow-item"></li>`)
+    .map((_, index) => `<li key={index} class="${className}"></li>`)
     .join('');
 }
 
@@ -43,7 +35,7 @@ function showProducts(arr, el) {
 // Функция отрисовки кнопки
 function showButton(item) {
   if (item.length >= 3) {
-    document.querySelector('.button').classList.add('button_visible');
+    document.querySelector('.footer__button').classList.add('footer__button_visible');
   }
 }
 
@@ -53,7 +45,7 @@ showProducts(products.slice(7, 11), '#list-bottom');
 
 // Drag and Drop
 let listItems = document.querySelectorAll('.list__item');
-let cart = document.querySelector('.cart');
+let cart = document.querySelector('.footer__cart');
 
 for (item of listItems) {
   item.addEventListener('dragstart', function (e) {
@@ -82,5 +74,6 @@ for (item of listItems) {
   });
 }
 
-showUmbrella();
-showUmbrellaShadow();
+showUmbrella('.umbrella', 'umbrella__item');
+showUmbrella('.back-side__shadow-umbrella', 'back-side__shadow-item');
+

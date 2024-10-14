@@ -1,0 +1,7 @@
+.back-side {
+  position: relative;
+  background: #34495e;
+  border-left: 7px solid #edf6ff;
+  border-right: 7px solid #edf6ff;
+  min-height: 80px;
+}

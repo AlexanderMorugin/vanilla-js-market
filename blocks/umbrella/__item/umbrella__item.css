@@ -1,11 +1,11 @@
-.shelf-top__item {
-  width: 100%;
+.umbrella__item {
+  width: 27px;
   min-height: 30px;
   background: #f1c40f;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
-.shelf-top__item:nth-child(even) {
+.umbrella__item:nth-child(even) {
   background: #c0392b;
 }
